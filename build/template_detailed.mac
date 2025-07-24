@@ -1,0 +1,32 @@
+#
+# Macro template para análisis detallado de pérdidas de energía
+# Incluye información sobre procesos físicos específicos
+#
+/control/verbose 1
+/run/verbose 1
+/process/verbose 0
+#
+# Configuración del detector
+/testem/det/setMat G4_Cu
+/testem/det/setSize 1 mm
+#
+# Lista de física extendida para capturar todos los procesos
+/testem/phys/addPhysics emstandard_opt4
+#
+# Configuración de cortes de producción
+/run/setCut 0.1 mm
+#
+/run/initialize
+#
+# Configuración de la partícula
+/gun/particle e-
+/gun/energy __ENERGY__ MeV
+#
+# Configuración de histogramas y análisis
+/analysis/setFileName muon_analysis
+/analysis/h1/set 1 100 0. __ENERGY__ MeV  # Espectro de energía depositada
+/analysis/h1/set 2 100 0. __ENERGY__ MeV  # Pérdidas por ionización
+/analysis/h1/set 3 100 0. __ENERGY__ MeV  # Pérdidas radiativas
+#
+# Número de eventos (mayor estadística para alta energía)
+/run/beamOn 50000

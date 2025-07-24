@@ -1,0 +1,48 @@
+# Compiled binaries
+build/TestEm1
+TestEm1
+
+# Build files
+build/CMakeFiles/
+build/CMakeCache.txt
+build/cmake_install.cmake
+build/Makefile
+
+# Temporary files
+*.tmp
+tmp_*
+*~
+.DS_Store
+
+# Output files that can be regenerated
+build/*.root
+build/muon_analysis.root
+
+# Large data files (keep CSV results but not massive outputs)
+build/full_output.txt
+build/detailed_output.txt
+build/simulation_log.txt
+
+# Temporary simulation files
+build/tmp_*.mac
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Backup files
+*.backup
+*.bak
+
+# Log files
+*.log
+
+# Keep important results and scripts
+!build/*.csv
+!build/*.py
+!build/*.sh
+!build/*.mac
+!build/*.png
+!build/*.pdf
+!build/*.md
